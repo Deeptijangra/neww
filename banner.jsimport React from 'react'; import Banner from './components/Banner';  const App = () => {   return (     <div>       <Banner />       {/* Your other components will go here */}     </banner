@@ -1,0 +1,60 @@
+import React from 'react';
+
+const Banner = () => {
+  return (
+    <header>
+      <h1>Sextant Dashboard</h1>
+    </header>
+  );
+};
+
+export default Banner;
+import React from 'react';
+import Banner from './components/Banner';
+
+const App = () => {
+  return (
+    <div>
+      <Banner />
+      {/* Your other components will go here */}
+    </div>
+  );
+};
+
+export default App;
+import React from 'react';
+
+const Exhibit = ({ title, children }) => {
+  return (
+    <div className="exhibit">
+      <h2>{title}</h2>
+      <div className="content">{children}</div>
+    </div>
+  );
+};
+
+export default Exhibit;
+import React from 'react';
+import Banner from './components/Banner';
+import Exhibit from './components/Exhibit';
+
+const App = () => {
+  return (
+    <div>
+      <Banner />
+
+      <Exhibit title="Public IP">
+        {/* Place the component that displays the public IP here */}
+      </Exhibit>
+
+      <Exhibit title="Latency Metrics">
+        {/* Place the component that displays latency metrics here */}
+      </Exhibit>
+
+      {/* You can add more Exhibit components for other data points in the future */}
+    </div>
+  );
+};
+
+export default App;
+
